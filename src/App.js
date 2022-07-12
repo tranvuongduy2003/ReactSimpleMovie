@@ -1,45 +1,62 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react";
-import { NavLink } from "react-router-dom";
+import MovieList from "./components/movie/MovieList";
 
 function App() {
   return (
     <Fragment>
-      <header className="header flex items-center justify-center gap-x-5 text-white py-10 mb-10">
+      <header className="flex items-center justify-center py-10 mb-5 text-white header gap-x-5">
         <span className="text-primary">Home</span>
         <span>Movies</span>
       </header>
-      <section className="banner h-[400px] page-container">
-        <div className="w-full h-full rounded-lg relative">
+      <section className="banner h-[500px] page-container mb-20">
+        <div className="relative w-full h-full rounded-lg">
           <div className="overlay absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.2)] rounded-lg"></div>
           <img
             src="http://genk.mediacdn.vn/2019/8/20/1-15662898065871774855253.jpg"
             alt=""
-            className="w-full h-full object-cover rounded-lg"
+            className="object-cover w-full h-full rounded-lg"
           />
-          <div className="absolute left-8 bottom-8 w-full text-white">
-            <h2 className="font-bold text-3xl mb-5">Avengers: Endgame</h2>
-            <div className="flex items-center gap-x-3 text-xs mb-8">
-              <span className="py-1 px-2 border border-white rounded-md">
+          <div className="absolute w-full text-white left-8 bottom-8">
+            <h2 className="mb-5 text-3xl font-bold">Avengers: Endgame</h2>
+            <div className="flex items-center mb-8 text-xs gap-x-3">
+              <span className="px-2 py-1 border border-white rounded-md">
                 Action
               </span>
-              <span className="py-1 px-2 border border-white rounded-md">
+              <span className="px-2 py-1 border border-white rounded-md">
                 Adventure
               </span>
-              <span className="py-1 px-2 border border-white rounded-md">
+              <span className="px-2 py-1 border border-white rounded-md">
                 Drama
               </span>
             </div>
             <div className="flex items-center gap-x-3">
-              <button className="py-3 px-6 rounded-lg bg-primary text-white font-medium">
+              <button className="px-6 py-3 font-medium text-white rounded-lg bg-primary">
                 Watch now
               </button>
-              <span className="text-white py-3 px-4 bg-black bg-opacity-50 rounded-lg cursor-pointer">
+              <span className="px-4 py-3 text-white bg-black bg-opacity-50 rounded-lg cursor-pointer">
                 <i class="fa-solid fa-plus"></i>
               </span>
             </div>
           </div>
         </div>
+      </section>
+      <section className="pb-20 movie-layout page-container">
+        <h2 className="mb-10 text-3xl font-bold text-white capitalize">
+          Now playing
+        </h2>
+        <MovieList type="now_playing"></MovieList>
+      </section>
+      <section className="pb-20 movie-layout page-container">
+        <h2 className="mb-10 text-3xl font-bold text-white capitalize">
+          Top rated
+        </h2>
+        <MovieList type="top_rated"></MovieList>
+      </section>
+      <section className="pb-20 movie-layout page-container">
+        <h2 className="mb-10 text-3xl font-bold text-white capitalize">
+          Trending
+        </h2>
+        <MovieList type="popular"></MovieList>
       </section>
     </Fragment>
   );
