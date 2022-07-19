@@ -9,6 +9,7 @@ const Banner = () => {
     fetcher
   );
   const genres = genresData.data?.genres;
+  console.log(genres);
   const { data } = useSWR(
     `https://api.themoviedb.org/3/movie/upcoming?api_key=7e12d3869fc93c0d942c505c589fe77a`,
     fetcher
