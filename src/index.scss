@@ -21,3 +21,14 @@
     height: 100%;
   }
 }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: white;
+  .selected {
+    @apply text-primary;
+  }
+}
